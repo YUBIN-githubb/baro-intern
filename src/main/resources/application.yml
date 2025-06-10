@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: baro-intern
+
+jwt:
+  secret:
+    key: ${JWT-SECRET-KEY}
