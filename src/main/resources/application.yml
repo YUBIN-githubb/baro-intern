@@ -5,3 +5,8 @@ spring:
 jwt:
   secret:
     key: ${JWT-SECRET-KEY}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui/index.html

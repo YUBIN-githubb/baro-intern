@@ -1,5 +1,6 @@
 package com.example.barointern.common.jwt;
 
+import com.example.barointern.common.consts.Const;
 import com.example.barointern.common.enums.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -10,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.PatternMatchUtils;
 
 import java.io.IOException;
 
@@ -31,7 +33,7 @@ public class JwtFilter implements Filter {
 
         String url = httpRequest.getRequestURI();
 
-        if (url.startsWith("/auth")) {
+        if (isWhiteList(url)) {
             chain.doFilter(request, response);
             return;
         }
@@ -77,5 +79,10 @@ public class JwtFilter implements Filter {
     @Override
     public void destroy() {
         Filter.super.destroy();
+    }
+
+    private boolean isWhiteList(String path) {
+        String[] lists = Const.WHITE_LIST;
+        return PatternMatchUtils.simpleMatch(lists, path);
     }
 }
