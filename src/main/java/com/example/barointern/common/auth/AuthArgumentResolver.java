@@ -41,7 +41,7 @@ public class AuthArgumentResolver implements HandlerMethodArgumentResolver {
         HttpServletRequest request = (HttpServletRequest) webRequest.getNativeRequest();
 
         String email = (String) request.getAttribute("email");
-        UserRole userRole = (UserRole) request.getAttribute("userRole");
+        UserRole userRole = UserRole.valueOf((String) request.getAttribute("userRole"));
 
         return new AuthUser(email, userRole);
     }

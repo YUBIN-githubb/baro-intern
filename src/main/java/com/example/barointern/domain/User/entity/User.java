@@ -15,4 +15,8 @@ public class User {
         this.password = password;
         this.userRole = userRole;
     }
+
+    public void changeUserRole (UserRole userRole) {
+        this.userRole = userRole;
+    }
 }

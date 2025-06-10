@@ -35,7 +35,15 @@ public class UserService {
         if (!passwordEncoder.matches(password, foundUser.getPassword())) {
             throw new CustomException(ErrorCode.INVALID_CREDENTIALS);
         }
-        String token = jwtUtil.createToken(email, foundUser.getUserRole());
-        return jwtUtil.substringToken(token);
+        return jwtUtil.createToken(email, foundUser.getUserRole());
+    }
+
+    public User changeUserRole(UserRole userRole, String email) {
+        if (userRole != UserRole.ADMIN) {
+            throw new CustomException(ErrorCode.ACCESS_DENIED);
+        }
+        User foundUser = userRepository.findByEmail(email);
+        foundUser.changeUserRole(UserRole.ADMIN);
+        return foundUser;
     }
 }
