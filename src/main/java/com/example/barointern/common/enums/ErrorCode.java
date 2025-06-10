@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 public enum ErrorCode {
-    USER_ALREADY_EXISTS("이미 가입된 사용자입니다.", HttpStatus.CONFLICT),
+    USER_ALREADY_EXISTS("이미 가입된 사용자 이메일 입니다.", HttpStatus.CONFLICT),
     INVALID_CREDENTIALS("아이디 또는 비밀번호가 올바르지 않습니다.", HttpStatus.BAD_REQUEST),
     ACCESS_DENIED("관리자 권한이 필요한 요청입니다. 접근 권한이 없습니다.", HttpStatus.FORBIDDEN),
     INTERNAL_SERVER_ERROR("서버에 오류가 발생했습니다. 관리자에게 문의하세요.", HttpStatus.INTERNAL_SERVER_ERROR),

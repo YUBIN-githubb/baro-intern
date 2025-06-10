@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class UserSignUpResponse {
+public class SignUpResponse {
     private final String email;
     private final UserRole userRole;
 }

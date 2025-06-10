@@ -19,4 +19,9 @@ public class UserService {
         String encodedPassword = passwordEncoder.encode(password);
         return userRepository.save(email, encodedPassword, UserRole.USER);
     }
+
+    public User adminSignUp(String email, String password) {
+        String encodedPassword = passwordEncoder.encode(password);
+        return userRepository.save(email, encodedPassword, UserRole.ADMIN);
+    }
 }

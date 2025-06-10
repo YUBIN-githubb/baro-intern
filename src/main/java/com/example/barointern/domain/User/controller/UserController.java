@@ -1,7 +1,7 @@
 package com.example.barointern.domain.User.controller;
 
-import com.example.barointern.domain.User.dto.request.UserSignUpRequest;
-import com.example.barointern.domain.User.dto.response.UserSignUpResponse;
+import com.example.barointern.domain.User.dto.request.SignUpRequest;
+import com.example.barointern.domain.User.dto.response.SignUpResponse;
 import com.example.barointern.domain.User.entity.User;
 import com.example.barointern.domain.User.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +17,16 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/auth/user/sign-up")
-    public ResponseEntity<UserSignUpResponse> signUp(
-            @RequestBody UserSignUpRequest dto) {
+    public ResponseEntity<SignUpResponse> userSignUp(
+            @RequestBody SignUpRequest dto) {
         User user = userService.userSignUp(dto.getEmail(), dto.getPassword());
-        return ResponseEntity.ok(new UserSignUpResponse(user.getEmail(),user.getUserRole()));
+        return ResponseEntity.ok(new SignUpResponse(user.getEmail(),user.getUserRole()));
+    }
+
+    @PostMapping("/auth/admin/sign-up")
+    public ResponseEntity<SignUpResponse> adminSignUp(
+            @RequestBody SignUpRequest dto) {
+        User user = userService.adminSignUp(dto.getEmail(), dto.getPassword());
+        return ResponseEntity.ok(new SignUpResponse(user.getEmail(),user.getUserRole()));
     }
 }
