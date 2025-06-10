@@ -2,22 +2,18 @@ package com.example.barointern.domain.User.controller;
 
 import com.example.barointern.common.annotation.Auth;
 import com.example.barointern.common.dto.AuthUser;
-import com.example.barointern.common.jwt.JwtUtil;
 import com.example.barointern.domain.User.dto.request.ChangeUserRoleRequest;
-import com.example.barointern.domain.User.dto.request.LogInRequest;
+import com.example.barointern.domain.User.dto.request.SignInRequest;
 import com.example.barointern.domain.User.dto.request.SignUpRequest;
 import com.example.barointern.domain.User.dto.response.ChangeUserRoleResponse;
-import com.example.barointern.domain.User.dto.response.LogInResponse;
+import com.example.barointern.domain.User.dto.response.SignInResponse;
 import com.example.barointern.domain.User.dto.response.SignUpResponse;
 import com.example.barointern.domain.User.entity.User;
 import com.example.barointern.domain.User.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,11 +42,11 @@ public class UserController {
     }
 
     @Operation(summary = "로그인", description = "로그인 하는 API입니다.")
-    @PostMapping("/auth/login")
-    public ResponseEntity<LogInResponse> logIn(
-            @Valid @RequestBody LogInRequest dto) {
-        String token = userService.logIn(dto.getEmail(), dto.getPassword());
-        return ResponseEntity.ok(new LogInResponse(token));
+    @PostMapping("/auth/sign-in")
+    public ResponseEntity<SignInResponse> signIn(
+            @Valid @RequestBody SignInRequest dto) {
+        String token = userService.signIn(dto.getEmail(), dto.getPassword());
+        return ResponseEntity.ok(new SignInResponse(token));
     }
 
     @Operation(summary = "역할변경(USER->ADMIN)", description = "역할변경(USER->ADMIN) 하는 API입니다. ADMIN 역할인 사용자만 호출 가능합니다.")

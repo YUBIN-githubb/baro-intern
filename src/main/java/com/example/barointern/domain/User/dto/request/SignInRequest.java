@@ -10,7 +10,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class LogInRequest {
+public class SignInRequest {
     @Schema(description = "로그인 시 필요한 사용자 이메일입니다.", example = "example@example.com")
     @Email(message = "이메일 형식이 올바르지 않습니다.")
     @NotBlank(message = "이메일 입력은 필수입니다.")

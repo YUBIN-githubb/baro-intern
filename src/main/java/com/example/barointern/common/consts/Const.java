@@ -9,7 +9,7 @@ public interface Const {
     String[] WHITE_LIST = {
             "/api/v1/auth/user/sign-up",
             "/api/v1/auth/admin/sign-up",
-            "/api/v1/auth/login",
+            "/api/v1/auth/sign-in",
             "/v3/api-docs/**",
             "/swagger-ui/**"
     };
