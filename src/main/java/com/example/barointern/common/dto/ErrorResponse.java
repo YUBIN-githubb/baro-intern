@@ -1,24 +1,24 @@
 package com.example.barointern.common.dto;
 
 import com.example.barointern.common.enums.ErrorCode;
+import lombok.Builder;
 import lombok.Getter;
+
+import java.time.LocalDateTime;
 
 @Getter
 public class ErrorResponse {
-    private ErrorDetail error;
+    private final String status;
+    private final ErrorCode code;
+    private final String message;
+    private final LocalDateTime timestamp;
 
-    public ErrorResponse(ErrorCode code, String message) {
-        this.error = new ErrorDetail(code, message);
-    }
-
-    public static class ErrorDetail {
-        private ErrorCode code;
-        private String message;
-
-        public ErrorDetail(ErrorCode code, String message) {
-            this.code = code;
-            this.message = message;
-        }
+    @Builder
+    private ErrorResponse(String status, ErrorCode code, String message, LocalDateTime timestamp) {
+        this.status = status;
+        this.code = code;
+        this.message = message;
+        this.timestamp = timestamp;
     }
 }
 
