@@ -1,4 +1,4 @@
-package com.example.barointern.domain.User;
+package com.example.barointern.domain.User.entity;
 
 import com.example.barointern.common.enums.UserRole;
 import lombok.Getter;
