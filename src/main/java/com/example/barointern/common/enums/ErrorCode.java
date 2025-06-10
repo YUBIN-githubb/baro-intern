@@ -10,7 +10,8 @@ public enum ErrorCode {
     ACCESS_DENIED("ACCESS_DENIED", "관리자 권한이 필요한 요청입니다. 접근 권한이 없습니다.", HttpStatus.FORBIDDEN),
     INTERNAL_SERVER_ERROR("INTERNAL_SERVER_ERROR", "서버에 오류가 발생했습니다. 관리자에게 문의하세요.", HttpStatus.INTERNAL_SERVER_ERROR),
     INVALID_TOKEN("INVALID_TOKEN", "유효하지 않은 인증 토큰입니다.",HttpStatus.UNAUTHORIZED),
-    INVALID_INPUT("INVALID_INPUT", "잘못된 요청입니다.", HttpStatus.BAD_REQUEST)
+    INVALID_INPUT("INVALID_INPUT", "잘못된 요청입니다.", HttpStatus.BAD_REQUEST),
+    AUTH_PARAMETER_MISMATCH("AUTH_PARAMETER_MISMATCH", "@Auth와 AuthUser 타입은 함께 사용되어야 합니다.", HttpStatus.BAD_REQUEST)
     ;
 
     private final String code;

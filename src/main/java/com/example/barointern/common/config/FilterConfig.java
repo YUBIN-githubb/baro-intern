@@ -1,4 +1,4 @@
-package com.example.barointern.config;
+package com.example.barointern.common.config;
 
 import com.example.barointern.common.jwt.JwtFilter;
 import com.example.barointern.common.jwt.JwtUtil;
