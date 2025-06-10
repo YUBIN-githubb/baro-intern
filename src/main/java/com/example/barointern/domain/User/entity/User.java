@@ -5,13 +5,12 @@ import lombok.Getter;
 
 @Getter
 public class User {
-    private Long id;
+
     private String email;
     private String password;
     private UserRole userRole;
 
-    public User(Long id, String email, String password, UserRole userRole) {
-        this.id = id;
+    public User(String email, String password, UserRole userRole) {
         this.email = email;
         this.password = password;
         this.userRole = userRole;

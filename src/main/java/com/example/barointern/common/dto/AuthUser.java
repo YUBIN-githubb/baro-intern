@@ -8,12 +8,10 @@ import lombok.Getter;
 @Getter
 public class AuthUser {
 
-    private final Long id;
     private final String email;
     private final UserRole userRole;
 
-    public AuthUser(Long id, String email, UserRole userRole) {
-        this.id = id;
+    public AuthUser(String email, UserRole userRole) {
         this.email = email;
         this.userRole = userRole;
     }

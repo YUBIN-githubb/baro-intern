@@ -16,11 +16,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class UserRepository {
 
     private final Map<String, User> userMap = new ConcurrentHashMap<>();
-    private final AtomicLong idSequence = new AtomicLong(1);
 
     public User save(String email, String password, UserRole userRole) {
-        long id = idSequence.getAndIncrement();
-        User user = new User(id, email, password, userRole);
+        User user = new User(email, password, userRole);
 
         User existingUser = userMap.putIfAbsent(email, user);
         if (existingUser != null) {

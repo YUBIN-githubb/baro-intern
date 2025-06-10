@@ -7,7 +7,6 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class UserSignUpResponse {
-    private final Long id;
     private final String email;
     private final UserRole userRole;
 }

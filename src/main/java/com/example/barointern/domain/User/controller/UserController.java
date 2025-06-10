@@ -20,6 +20,6 @@ public class UserController {
     public ResponseEntity<UserSignUpResponse> signUp(
             @RequestBody UserSignUpRequest dto) {
         User user = userService.userSignUp(dto.getEmail(), dto.getPassword());
-        return ResponseEntity.ok(new UserSignUpResponse(user.getId(),user.getEmail(),user.getUserRole()));
+        return ResponseEntity.ok(new UserSignUpResponse(user.getEmail(),user.getUserRole()));
     }
 }
