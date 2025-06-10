@@ -27,4 +27,12 @@ public class UserRepository {
 
         return user;
     }
+
+    public User findByEmail(String email) {
+        User foundUser = userMap.get(email);
+        if (foundUser == null) {
+            throw new CustomException(ErrorCode.USER_NOT_FOUND);
+        }
+        return foundUser;
+    }
 }
