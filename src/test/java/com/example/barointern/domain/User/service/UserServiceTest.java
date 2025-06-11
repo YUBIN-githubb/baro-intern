@@ -22,6 +22,8 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {
 
+    // Service 단위 테스트를 작성합니다.
+
     @InjectMocks
     private UserService userService;
 

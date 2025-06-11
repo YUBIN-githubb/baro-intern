@@ -17,6 +17,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @ExtendWith(MockitoExtension.class)
 class UserRepositoryTest {
+
+    // Repository 단위 테스트를 작성합니다.
+
     @InjectMocks
     private UserRepository userRepository;
 
@@ -71,7 +74,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    @DisplayName("이메일로 사용자 못 찾기")
+    @DisplayName("존재하지 않는 이메일 찾기")
     public void failToFindByEmail() {
         // given
         String email1 = "test1@example.com";
@@ -86,7 +89,4 @@ class UserRepositoryTest {
         });
         assertEquals("존재하지 않는 사용자입니다.", ex.getMessage());
     }
-
-
-
 }
