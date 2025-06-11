@@ -1,7 +1,5 @@
 package com.example.barointern.common.consts;
 
-import java.util.Map;
-
 public interface Const {
     String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$";
 

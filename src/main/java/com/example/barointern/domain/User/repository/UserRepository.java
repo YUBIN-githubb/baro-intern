@@ -4,13 +4,10 @@ import com.example.barointern.common.enums.ErrorCode;
 import com.example.barointern.common.enums.UserRole;
 import com.example.barointern.common.exception.CustomException;
 import com.example.barointern.domain.User.entity.User;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Component
 public class UserRepository {

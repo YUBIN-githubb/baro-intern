@@ -1,7 +1,6 @@
 package com.example.barointern.common.jwt;
 
 import com.example.barointern.common.consts.Const;
-import com.example.barointern.common.enums.UserRole;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;

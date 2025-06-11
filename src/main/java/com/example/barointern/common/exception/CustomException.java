@@ -2,7 +2,6 @@ package com.example.barointern.common.exception;
 
 import com.example.barointern.common.enums.ErrorCode;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
 
 @Getter
 public class CustomException extends RuntimeException {

@@ -1,8 +1,6 @@
 package com.example.barointern.common.dto;
 
 import com.example.barointern.common.enums.UserRole;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter

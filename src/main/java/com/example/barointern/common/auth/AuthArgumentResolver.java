@@ -6,7 +6,6 @@ import com.example.barointern.common.enums.ErrorCode;
 import com.example.barointern.common.enums.UserRole;
 import com.example.barointern.common.exception.CustomException;
 import jakarta.annotation.Nullable;
-import jakarta.security.auth.message.AuthException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
-
-import static org.springframework.http.HttpStatus.BAD_REQUEST;
 
 @Component
 public class AuthArgumentResolver implements HandlerMethodArgumentResolver {
