@@ -11,7 +11,8 @@ public interface Const {
             "/api/v1/auth/admin/sign-up",
             "/api/v1/auth/sign-in",
             "/v3/api-docs/**",
-            "/swagger-ui/**"
+            "/swagger-ui/**",
+            "/docs"
     };
 
 }
