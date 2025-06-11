@@ -1,4 +1,4 @@
-package com.example.barointern.domain;
+package com.example.barointern;
 
 import com.example.barointern.common.config.PasswordEncoder;
 import com.example.barointern.common.enums.UserRole;
